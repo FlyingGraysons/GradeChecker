@@ -117,7 +117,10 @@ class mainAPI extends API
 	protected function subject() {
 		if( isset ( $_POST['subject'])) {
 			$id = strtolower($_POST['subject']);
-			$this->insert("INSERT INTO `subjects` (`name`, `id`, `student`) VALUES ('{$_POST['subject']}', '{$id}', '{$_SESSION['student']}')");
+			if (mysqli_num_rows($this->selectMultiple("SELECT * FROM `subjects` WHERE `student` = \"{$_SESSION['student']}\" AND `id` = \"{$id}\"") == 0);
+) {
+				$this->insert("INSERT INTO `subjects` (`name`, `id`, `student`) VALUES ('{$_POST['subject']}', '{$id}', '{$_SESSION['student']}')");
+			}
 		}
 
 		return $this->selectMultiple("SELECT `name`, `id` FROM `subjects` WHERE `student` = \"{$_SESSION['student']}\" ORDER BY `id` ASC");
