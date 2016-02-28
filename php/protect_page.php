@@ -1,9 +1,5 @@
 <?php
 
-function encryptPassword($password) {
-	return $mysqli->real_escape_string(crypt($password, $config['salt']));
-}
-
 session_start();
 if (!isset($_SESSION['loggedIn'])) {
 		$_SESSION['loggedIn'] = false;
@@ -37,11 +33,14 @@ if (isset($_POST['password']) && isset($_POST['username'])) {
 		if (mysqli_num_rows($result) == 1) {
 			// output data of each row
 			while($row = mysqli_fetch_assoc($result)) {
+				$password = $mysqli->real_escape_string(crypt($_POST['password'], $config['salt']));
 				if ($row['password'] == encryptPassword($_POST['password'])) {
 						$_SESSION['loggedIn'] = true;
 						$_SESSION['username'] = $_POST['username'];
 						$_SESSION['student'] = $row['student'];
 						$_SESSION['error'] = NULL;
+					} else {
+						$_SESSION['error'] ='Incorrect username or password';
 					}
 		}} else {
 			$_SESSION['error'] ='Incorrect username or password';
