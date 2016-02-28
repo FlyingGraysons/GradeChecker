@@ -102,8 +102,12 @@ class mainAPI extends API
 		&& ($_SESSION['username'] == $_SESSION['student']) ) { // can only be added by the student
 			$password = $this->encryptPassword($_POST['password']); // for hashing the password for server-side storage
 			$username = strtolower($_POST['username']);
-			$this->insert("INSERT INTO `users` (`id`, `username`, `password`, `student`) VALUES (NULL, \"{$username}\", \"{$password}\", \"{$_SESSION['student']}\")");
-			return 1;
+			if (mysqli_num_rows($this->selectMultiple("SELECT * FROM `users` WHERE `username` = \"{$username}\"") == 0)) {
+				$this->insert("INSERT INTO `users` (`id`, `username`, `password`, `student`) VALUES (NULL, \"{$username}\", \"{$password}\", \"{$_SESSION['student']}\")");
+				return 1;
+			} else {
+				return -1;
+			}
 		}
 
 		// for getting users
