@@ -15,5 +15,14 @@ GradeChecker is a website available at [wildermuth.net](https://wildermuth.net "
 GradeChecker runs on a LAMP backend, running Ubuntu 14.04 LTS, Apache 2, mySQL for the database, and PHP.
 All passwords are hashed before being sent to the database, so it is secure.
 
-### Contributing
-If you'd like to contribute, please fork the repo and make a pull request.
+[] (# "### Contributing
+If you'd like to contribute, please fork the repo and make a pull request.  
+Any work on something from the ToDo would be especially appreciated.")
+
+#####ToDo
+- Add ability to remove subjects
+- Add ability to remove grades
+- Add ability to remove parents
+- Add ability to remove account
+- Add ability to change password
+- Add ability to sort grades in specific date range
