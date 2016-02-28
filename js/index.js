@@ -52,7 +52,9 @@ $(function() {
 	})
 
 	$("#submitParent").click(function() {
-		addUser( $('#parentName').val() , $('#parentPass').val())
+		data = addUser( $('#parentName').val() , $('#parentPass').val())
+		if (data == 1) messageBox.addedParent($('#parentName').val());
+		else messageBox.failedParent($('#parentName').val());
 	})
 
 	$("#submitSubject").click(function() {
@@ -64,9 +66,11 @@ $(function() {
 	function setNav() {
 		$('.setNav').remove()
 		data = getSubjects();
-		for (var i = 0; i < data.length; i++) {
-			$('#nav').append('<li class="tab tabby setNav" id="' +data[i].id +'"><a href="#">' +data[i].name +'</a></li>') // tabby class!
-			$('#subject').append('<option class="setNav">' +data[i].name +'</option>')
+		if (data) {
+			for (var i = 0; i < data.length; i++) {
+				$('#nav').append('<li class="tab tabby setNav" id="' +data[i].id +'"><a href="#">' +data[i].name +'</a></li>') // tabby class!
+				$('#subject').append('<option class="setNav">' +data[i].name +'</option>')
+			}
 		}
 
 		currentUser = getUser()

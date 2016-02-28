@@ -33,7 +33,7 @@ if (isset($_POST['password']) && isset($_POST['username'])) {
 		if (mysqli_num_rows($result) == 0) {
 			// output data of each row
 			$username = strtolower($_POST['username']);
-			$password = $mysqli->real_escape_string(crypt($password, $config['salt']));
+			$password = $mysqli->real_escape_string(crypt($_POST['password'], $config['salt']));
 			$sql = "INSERT INTO `users` (`id`, `username`, `password`, `student`) VALUES (NULL, \"{$username}\", \"{$password}\", \"{$username}\")";
 			mysqli_query($mysqli, $sql);
 

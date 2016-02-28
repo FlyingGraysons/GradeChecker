@@ -34,7 +34,7 @@ if (isset($_POST['password']) && isset($_POST['username'])) {
 			// output data of each row
 			while($row = mysqli_fetch_assoc($result)) {
 				$password = $mysqli->real_escape_string(crypt($_POST['password'], $config['salt']));
-				if ($row['password'] == encryptPassword($_POST['password'])) {
+				if ($row['password'] == $password) {
 						$_SESSION['loggedIn'] = true;
 						$_SESSION['username'] = $_POST['username'];
 						$_SESSION['student'] = $row['student'];

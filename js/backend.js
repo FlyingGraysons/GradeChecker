@@ -29,6 +29,14 @@ var messageBox = {
 	failedToReload: function() {
 		this.$messageBox.empty()
 		this.$messageBox.append($("<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Database connection problem.</strong>&nbsp;&nbsp;There was a problem connecting to the database. Please check your connection and try again.</div>"))
+	},
+	addedParent: function(e) {
+		this.$messageBox.empty()
+		this.$messageBox.append($("<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Successful.</strong>&nbsp;&nbsp;Successfully added parent <strong>" +e +"</stong>.</div>"))
+	},
+	failedParent: function(e) {
+		this.$messageBox.empty()
+		this.$messageBox.append($("<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Failed.</strong>&nbsp;&nbsp;Failed to add parent <strong>" +e +"</stong>.</div>"))
 	}
 }
 
@@ -95,8 +103,7 @@ function addUser(username, password) {
 		async: false,
 		data: data
 	});
-	if (result.responseJSON == 1) console.log("Succesfully added user: " + username);
-	else console.log("Failed to add user: " +username);
+	return result.responseJSON;
 }
 
 function getUser(username) {
