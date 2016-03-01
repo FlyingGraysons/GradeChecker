@@ -19,10 +19,5 @@ All passwords are hashed before being sent to the database, so it is secure.
 If you'd like to contribute, please fork the repo and make a pull request.  
 Any work on something from the ToDo would be especially appreciated.")
 
-#####ToDo
-- Add ability to remove subjects
-- Add ability to remove grades
-- Add ability to remove parents
-- Add ability to remove account
-- Add ability to change password
-- Add ability to sort grades in specific date range
+### Installation
+Don't! Use the website [here](https://wildermuth.net "GradeChecker")!
