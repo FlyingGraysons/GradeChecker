@@ -15,9 +15,9 @@ GradeChecker is a website available at [wildermuth.net](https://wildermuth.net "
 GradeChecker runs on a LAMP backend, running Ubuntu 14.04 LTS, Apache 2, mySQL for the database, and PHP.
 All passwords are hashed before being sent to the database, so it is secure.
 
-[] (# "### Contributing
+### Contributing
 If you'd like to contribute, please fork the repo and make a pull request.  
-Any work on something from the ToDo would be especially appreciated.")
+Especially work on something in the todo.md file.
 
 ### Installation
 Don't! Use the website [here](https://wildermuth.net "GradeChecker")!
