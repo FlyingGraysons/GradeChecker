@@ -27,7 +27,7 @@ $(function() {
 		// collect data
 		try {
 			data = "{"
-			data += $('input').map(function(idx, elem) {
+			data += $('.to-be-submitted').map(function(idx, elem) {
 				value = $(elem).val()
 				id = this.id
 				if ( value == "") {
@@ -35,7 +35,7 @@ $(function() {
 				}
 				return ' "' +id +'" : "' + value + '" '
 			}).get()
-			data += ', "subject" : "' +$('select').val() +'" }'
+			data += ' }'
 			data = JSON.parse(data)
 			console.log(data)
 			submitGrades(data)

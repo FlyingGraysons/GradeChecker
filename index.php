@@ -75,16 +75,16 @@
 		<div class="row">
 			<div class="form-group col-md-4 center-block">
 				<label for="assignment">Assignment Title</label>
-				<input type="text" class="form-control" id="title" placeholder="Spectography Lab">
+				<input type="text" class="form-control to-be-submitted" id="title" placeholder="Spectography Lab">
 			</div>
 			<div class="form-group col-md-4 center-block">
 				<label for="type">Type</label>
-				<input type="text" class="form-control" id="type" placeholder="Lab, essay, project, etc">
+				<input type="text" class="form-control to-be-submitted" id="type" placeholder="Lab, essay, project, etc">
 			</div>
 			<div class="form-group col-md-4 center-block">
 				<label for="due">Date</label>
 				<div class='input-group date' id='due'>
-					<input type='text' class="form-control" id="date" placeholder="01/01/2016"/>
+					<input type='text' class="form-control to-be-submitted" id="date" placeholder="01/01/2016"/>
 					<span class="input-group-addon">
 							<span class="glyphicon glyphicon-calendar"></span>
 					</span>
@@ -94,15 +94,15 @@
 		<div class="row">
 			<div class="form-group col-md-3 center-block">
 				<label for="grade">Grade</label>
-				<input type="text" class="form-control" id="grade" placeholder="A+">
+				<input type="text" class="form-control to-be-submitted" id="grade" placeholder="A+">
 			</div>
 			<div class="form-group col-md-3 center-block">
 				<label for="number">Percent</label>
-				<input type="number" class="form-control" id="number" placeholder="93">
+				<input type="number" class="form-control to-be-submitted" id="number" placeholder="93">
 			</div>
 			<div class="form-group col-md-3 center-block">
 				<label for="type">Subject</label>
-				<select class="form-control" id="subject">
+				<select class="form-control to-be-submitted" id="subject">
 
 				</select>
 			</div>
